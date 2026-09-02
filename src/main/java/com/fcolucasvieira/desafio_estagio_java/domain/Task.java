@@ -20,4 +20,12 @@ public class Task {
     private Timestamp deliveryDate;
 
     private boolean completed;
+
+    public Task(String title, String description, String responsible, Timestamp deliveryDate) {
+        this.title = title;
+        this.description = description;
+        this.responsible = responsible;
+        this.deliveryDate = deliveryDate;
+        this.completed = false;
+    }
 }
