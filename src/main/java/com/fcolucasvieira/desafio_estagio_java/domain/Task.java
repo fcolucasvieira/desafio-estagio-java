@@ -3,8 +3,7 @@ package com.fcolucasvieira.desafio_estagio_java.domain;
 import jakarta.persistence.*;
 import lombok.Getter;
 
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
@@ -20,11 +19,11 @@ public class Task {
     private String responsible;
 
     @Column(name = "delivery_date")
-    private LocalDateTime deliveryDate;
+    private LocalDate deliveryDate;
 
     private boolean completed;
 
-    public Task(String title, String description, String responsible, LocalDateTime deliveryDate) {
+    public Task(String title, String description, String responsible, LocalDate deliveryDate) {
         this.title = title;
         this.description = description;
         this.responsible = responsible;

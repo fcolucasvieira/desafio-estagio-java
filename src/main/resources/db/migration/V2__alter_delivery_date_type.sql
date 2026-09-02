@@ -1,0 +1,1 @@
+ALTER TABLE tasks ALTER COLUMN delivery_date TYPE DATE;

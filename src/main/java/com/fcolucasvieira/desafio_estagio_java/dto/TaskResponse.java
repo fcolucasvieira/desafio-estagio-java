@@ -1,7 +1,6 @@
 package com.fcolucasvieira.desafio_estagio_java.dto;
 
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.UUID;
 
 public record TaskResponse (
@@ -9,7 +8,7 @@ public record TaskResponse (
         String title,
         String description,
         String responsible,
-        LocalDateTime deliveryDate,
+        LocalDate deliveryDate,
         boolean completed
 )
 {}
