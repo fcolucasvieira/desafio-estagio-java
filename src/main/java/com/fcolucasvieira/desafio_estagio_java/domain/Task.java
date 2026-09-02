@@ -28,4 +28,6 @@ public class Task {
         this.deliveryDate = deliveryDate;
         this.completed = false;
     }
+
+    private Task() {}
 }
