@@ -8,6 +8,8 @@ import com.fcolucasvieira.desafio_estagio_java.repository.TaskRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -25,5 +27,21 @@ public class TaskService {
     public Task findById(UUID id) {
         return repository.findById(id)
                 .orElseThrow(() -> new TaskNotFoundException("Task not found with Id: " + id));
+    }
+
+    public List<Task> findByResponsible(String responsible) {
+        return repository.findByResponsibleContainingIgnoreCase(responsible);
+    }
+
+    public List<Task> findByDeliveryDate(LocalDate deliveryDate) {
+        return repository.findByDeliveryDate(deliveryDate);
+    }
+
+    public List<Task> findByCompletedFalse() {
+        return repository.findByCompletedFalse();
+    }
+
+    public List<Task> findByCompletedFalseAndResponsible(String responsible) {
+        return repository.findByCompletedFalseAndResponsibleContainingIgnoreCase(responsible);
     }
 }
